@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- Template by quackit.com -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>KTM EduTech | Web Legal Frameworks</title>
+        <!-- Lightbox2 CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="framework-styles.css" />
+
+        <script type="text/javascript">
+            /* =============================
+			This script generates sample text for the body content. 
+			You can remove this script and any reference to it. 
+			 ============================= */
+            var bodyText = [
+                "Remember, you are unique, just like everybody else.",
+                "Too much agreement kills a good chat.",
+                "Get your facts first, then you can distort them as you please.",
+                "I intend to live forever. So far, so good.",
+                "</p><p>A clear conscience is usually a sign of a bad memory.",
+                "What's another word for Thesaurus?",
+                "<h3>Heading</h3><p>Experience is something you don't get until just after you need it."
+            ];
+            function generateText(sentenceCount) {
+                for (var i = 0; i < sentenceCount; i++) document.write(bodyText[Math.floor(Math.random() * 7)] + " ");
+            }
+        </script>
+    </head>
+
+    <body>
+        <header id="header">
+            <div id="logo">
+                <img src="https://picshack.net/ib/UwWmVL7Nj2.png" style="max-width: 100%" alt="Sample picture" />
+            </div>
+
+            <nav>
+                <div class="innertube">
+                    <ul>
+                        <li><a href="Disclaimer:blank" data-lightbox="iframe" data-title="Embedded Page">Disclamer</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                        <li><a href="#">Link 5</a></li>
+                    </ul>
+                </div>
+
+                <li>KTM EduTech</li>
+            </nav>
+        </header>
+
+        <main>
+            <div class="innertube">
+                <h1
+                    id="terms-and-conditions-last-updated-https-img-shields-io-badge-last-20updated-sep-205-2c-202024-207-3a16-20pm-blue-"></h1>
+                <!-- ADD THE WEB LEGAL FRAMEWORK HERE -->
+
+                <!-- ADD THE WEB LEGAL FRAMEWORK HERE -->
+            </div>
+        </main>
+        <!-- Lightbox2 JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script>
+            // Customize lightbox for iframe support
+            lightbox.option({
+                resizeDuration: 200,
+                wrapAround: true,
+                disableScrolling: true
+            });
+
+            // Create a custom lightbox effect for iframes
+            document.querySelector('a[data-lightbox="iframe"]').addEventListener("click", function (event) {
+                event.preventDefault();
+                var iframeUrl = "https://example.com"; // Replace with your URL
+                var lightboxContent =
+                    '<iframe class="lightbox-iframe" src="' + iframeUrl + '" allowfullscreen></iframe>';
+                var lightbox = document.createElement("div");
+                lightbox.classList.add("lightbox");
+                lightbox.innerHTML = lightboxContent;
+                document.body.appendChild(lightbox);
+                lightbox.addEventListener("click", function () {
+                    document.body.removeChild(lightbox);
+                });
+            });
+        </script>
+    </body>
+</html>
