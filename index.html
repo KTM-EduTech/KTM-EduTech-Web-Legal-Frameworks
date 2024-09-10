@@ -1,6 +1,4 @@
-<!doctype html>
-<!-- Template by quackit.com -->
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>KTM EduTech | Web Legal Frameworks</title>
@@ -37,49 +35,108 @@
             <nav>
                 <div class="innertube">
                     <ul>
-                        <li><a href="Disclaimer:blank" data-lightbox="iframe" data-title="Embedded Page">Disclamer</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 4</a></li>
-                        <li><a href="#">Link 5</a></li>
+                        <li><a href="https://www.kydmasong.net" target="_blank">KTM EduTech</a></li>
                     </ul>
                 </div>
-
-                <li>KTM EduTech</li>
             </nav>
         </header>
 
         <main>
             <div class="innertube">
                 <h1
-                    id="terms-and-conditions-last-updated-https-img-shields-io-badge-last-20updated-sep-205-2c-202024-207-3a16-20pm-blue-"></h1>
+                    id="terms-and-conditions-last-updated-https-img-shields-io-badge-last-20updated-sep-205-2c-202024-207-3a16-20pm-blue-">
+                    Web Legal Frameworks
+                </h1>
+
                 <!-- ADD THE WEB LEGAL FRAMEWORK HERE -->
+
+                <!-- Buttons to open lightboxes -->
+                <div class="button-container">
+                    <button class="open-lightbox" data-lightbox="affiliate-disclosure">Affiliate Disclosure</button>
+                    <button class="open-lightbox" data-lightbox="cookie-policy">Cookie Policy</button>
+                    <button class="open-lightbox" data-lightbox="disclaimer">Disclaimer</button>
+                    <button class="open-lightbox" data-lightbox="privacy-policy">Privacy Policy</button>
+                    <button class="open-lightbox" data-lightbox="terms-and-conditions">Terms and Conditions</button>
+                </div>
+                                <div class="button-container">
+                                    
+
+                        <a href="AffiliateDisclosure.html" target="_blank">Affiliate Disclosure</a> &nbsp; | &nbsp;
+                       <a href="Disclaimer.html" target="_blank">Disclaimer</a> &nbsp; | &nbsp;
+                       <a href="CookiePolicy.html" target="_blank">Cookie Policy</a> &nbsp; | &nbsp;
+                        <a href="PrivacyPolicy.html" target="_blank">Privacy Policy</a> &nbsp; | &nbsp;
+                        <a href="TermsAndConditions.html" target="_blank">Terms and Conditions</a>
+
+                </div>
+                <!-- Lightbox containers -->
+                <div id="lightbox-overlay" class="lightbox-overlay"></div>
+
+                <div id="affiliate-disclosure" class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <iframe src="AffiliateDisclosure.html" frameborder="0"></iframe>
+                </div>
+
+                <div id="cookie-policy" class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <iframe src="CookiePolicy.html" frameborder="0"></iframe>
+                </div>
+
+                <div id="disclaimer" class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <iframe src="Disclaimer.html" frameborder="0"></iframe>
+                </div>
+
+                <div id="index" class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <iframe src="index.html" frameborder="0"></iframe>
+                </div>
+
+                <div id="privacy-policy" class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <iframe src="PrivacyPolicy.html" frameborder="0"></iframe>
+                </div>
+
+                <div id="terms-and-conditions" class="lightbox-content">
+                    <span class="close-lightbox">&times;</span>
+                    <iframe src="TermsAndConditions.html" frameborder="0"></iframe>
+                </div>
 
                 <!-- ADD THE WEB LEGAL FRAMEWORK HERE -->
             </div>
         </main>
         <!-- Lightbox2 JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
         <script>
-            // Customize lightbox for iframe support
-            lightbox.option({
-                resizeDuration: 200,
-                wrapAround: true,
-                disableScrolling: true
-            });
+            // script.js
+            document.addEventListener("DOMContentLoaded", function () {
+                const buttons = document.querySelectorAll(".open-lightbox");
+                const overlay = document.getElementById("lightbox-overlay");
+                const lightboxContents = document.querySelectorAll(".lightbox-content");
+                const closeButtons = document.querySelectorAll(".close-lightbox");
 
-            // Create a custom lightbox effect for iframes
-            document.querySelector('a[data-lightbox="iframe"]').addEventListener("click", function (event) {
-                event.preventDefault();
-                var iframeUrl = "https://example.com"; // Replace with your URL
-                var lightboxContent =
-                    '<iframe class="lightbox-iframe" src="' + iframeUrl + '" allowfullscreen></iframe>';
-                var lightbox = document.createElement("div");
-                lightbox.classList.add("lightbox");
-                lightbox.innerHTML = lightboxContent;
-                document.body.appendChild(lightbox);
-                lightbox.addEventListener("click", function () {
-                    document.body.removeChild(lightbox);
+                buttons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        const targetId = this.getAttribute("data-lightbox");
+                        const targetLightbox = document.getElementById(targetId);
+
+                        if (targetLightbox) {
+                            overlay.style.display = "block";
+                            targetLightbox.style.display = "block";
+                        }
+                    });
+                });
+
+                closeButtons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        this.parentElement.style.display = "none";
+                        overlay.style.display = "none";
+                    });
+                });
+
+                overlay.addEventListener("click", function () {
+                    lightboxContents.forEach((content) => {
+                        content.style.display = "none";
+                    });
+                    this.style.display = "none";
                 });
             });
         </script>
